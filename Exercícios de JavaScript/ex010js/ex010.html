@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript externo</title>
+    <style>
+        body{
+            font: 12pt arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript externo</h1>
+    <button onclick="primeiro()">Ação 1</button>
+    <button onclick="segundo()">Ação 2</button>
+    <button onclick="terceiro()">Ação 3</button>
+    <button onclick="quarto()">Ação 4</button>
+    <button onclick="zerar()">Zerar</button>
+    <p>Aqui vou regitrar as suas ações com os botões acima.</p>
+    <section id="resultado">
+        
+    </section>
+    <script>
+        let res = window.document.getElementById('resultado')
+        contador = 0
+
+        function primeiro(){
+            contador ++
+            res.innerHTML += `<p>Clicou no primeiro botão.</p>`
+        }
+
+        function segundo(){
+            contador ++
+            res.innerHTML += `<p>Clicou no segundo botão.</p>`
+        }
+
+        function terceiro(){
+            contador ++
+            res.innerHTML += `<p>Clicou no terceiro botão.</p>`
+        }
+
+        function quarto(){
+            contador ++
+            res.innerHTML += `<p>Clicou no quarto botão.</p>`
+        }
+
+    function zerar() {
+    contador = 0
+    res.innerHTML = null
+}
+    </script>
+</body>
+</html>
