@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando a Idade</title>
+    <style>
+        body {
+            font: 12pt Arial;
+        }
+
+        button {
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculando a Idade</h1>
+    <button onclick="calcular()">iniciar</button>
+    <section id="resposta">
+        <p>aqui vai aparecer algo...</p>
+    </section>
+    <script>
+        function calcular(){
+            let nascimento = Number(window.prompt('Em que ano você Nasceu?'))
+            let anos = 2022 - nascimento
+            let res = window.document.getElementById('resposta')
+
+            res.innerHTML = `<p>Quem nasceu em ${nascimento} vai completar <strong>${anos}</strong> anos em 2022.</p>`
+        }
+    </script>
+</body>
+</html>
