@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplas ações</title>
+    <style>
+        body{
+            font: 12pt arial;
+        }
+
+        button{
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Multiplas ações</h1>
+    <button onclick="multiplas()" id="botao">Clique para iniciar</button>
+    <section id="resposta">
+        <p>Clique no botão acima para começar.</p>
+    </section>
+    <script>
+        function multiplas() {
+            let num1 = Number(window.prompt('Primeiro Valor:'))
+            let num2 = Number(window.prompt('Segundo Valor:'))
+            let op = Number(window.prompt(`os valores informados foram: ${num1} e ${num2}. \nOque vamos fazer? \n[1]Somar \n[2]Subtrair \n[3]Multiplicar \n[4]Dividir`))
+            let res = document.getElementById('resposta')
+
+            res.innerHTML = `<h2>Calculando...</h2>`
+
+            switch (op) {
+                case 1:
+                     res.innerHTML += `<p>${num1} + ${num2} = <strong>${num1+num2}</strong></p>`
+                    break;
+
+                    case 2:
+                     res.innerHTML += `<p>${num1} - ${num2} = <strong>${num1-num2}</strong></p>`
+                    break;
+
+                    case 3:
+                     res.innerHTML += `<p>${num1} x ${num2} = <strong>${num1*num2}</strong></p>`
+                    break;
+
+                    case 4:
+                     res.innerHTML += `<p>${num1} / ${num2} = <strong>${num1/num2}</strong></p>`
+                    break;
+            
+                default:
+                res.innerHTML += `<p>OPÇÃO INVÁLIDA! Você digitou ${num1} e ${num2}, mas não sei o que fazer com eles.<p/>` 
+                    break;
+            }
+        } 
+    </script>
+</body>
+</html>
