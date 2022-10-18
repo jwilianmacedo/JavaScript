@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação no Brasil</title>
+    <style>
+        body {
+            font: 12pt arial;
+        }
+
+        button{
+            font-size: 12pt;
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Descubra a estação do ano</h1>
+    <button onclick="estacao()">Informe o mês aqui</button>
+    <section id="resultado">
+        <p>Clique no botão acima para informar o mês.</p>
+    </section>
+    <script>
+        function estacao(){
+            let mes = window.prompt('Digite o mês em extenso (ex:setembro)')
+            let res = window.document.getElementById('resultado')
+            let estacao
+
+            switch (mes.toUpperCase()) {
+                case 'DEZEMBRO': case 'JANEIRO': case 'FEVEREIRO':
+                    estacao = 'Verão'
+                    break;
+
+                    case 'MARÇO': case 'ABRIL': case 'MAIO':
+                    estacao = 'Outono'
+                    break;
+
+                    case 'JUNHO': case 'JULHO': case 'AGOSTO':
+                    estacao = 'Inverno'
+                    break;
+
+                    case 'SETEMBRO': case 'OUTUBRO': case 'NOVEMBRO':
+                    estacao = 'Primavera'
+                    break;
+            
+                default:
+                    estacao = 'INDEFINIDA!'
+                    break;
+            }
+
+            res.innerHTML = `<p>No mês de <mark>${mes}</mark>, estamos na estação <mark>${estacao}</mark></p>`
+        }
+    </script>
+</body>
+</html>
